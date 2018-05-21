@@ -1,2 +1,18 @@
-<h1>Entry#index</h1>
-<p>Find me in app/views/entry/index.html.erb</p>
+<br><div class="card bg-light mb-3 mx-auto" style="max-width: 30rem;">
+    <div class="card-body">
+        <center>
+        <h5 class="card-title">Welcome to the Attendance Monitoring System!</h5>
+        <p class="card-text">Before you log-in, please click your user category<p>
+
+        
+            <div class="col-sm">
+                <%= button_to "Teacher", teachers_sign_in_path, class: "btn btn-primary col-sm-9" %>
+            </div>
+            <span style="display:block; height: 10px;"></span>
+            <div class="col-sm">    
+                <%= button_to "Student", students_sign_in_path, class: "btn btn-success col-sm-9" %>
+            </div>
+        </center>
+        
+    </div>
+</div>

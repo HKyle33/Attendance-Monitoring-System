@@ -3,6 +3,9 @@ Rails.application.routes.draw do
 
   get 'status/index'
 
+  get 'teachers/sign_in'
+  get 'students/sign_in'
+
   resources :subjects
   root 'home#index'
 
