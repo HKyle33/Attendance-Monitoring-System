@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  subject_title: MyString
+  subject_code: MyString
+  units: 1
+  day: MyString
+  time_start: 2018-05-21 20:32:31
+  time_end: 2018-05-21 20:32:31
+  class_key: MyString
+
+two:
+  subject_title: MyString
+  subject_code: MyString
+  units: 1
+  day: MyString
+  time_start: 2018-05-21 20:32:31
+  time_end: 2018-05-21 20:32:31
+  class_key: MyString

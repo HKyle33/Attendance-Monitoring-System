@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Subject title:</strong>
+  <%= @subject.subject_title %>
+</p>
+
+<p>
+  <strong>Subject code:</strong>
+  <%= @subject.subject_code %>
+</p>
+
+<p>
+  <strong>Units:</strong>
+  <%= @subject.units %>
+</p>
+
+<p>
+  <strong>Day:</strong>
+  <%= @subject.day %>
+</p>
+
+<p>
+  <strong>Time start:</strong>
+  <%= @subject.time_start %>
+</p>
+
+<p>
+  <strong>Time end:</strong>
+  <%= @subject.time_end %>
+</p>
+
+<p>
+  <strong>Class key:</strong>
+  <%= @subject.class_key %>
+</p>
+
+<%= link_to 'Edit', edit_subject_path(@subject) %> |
+<%= link_to 'Back', subjects_path %>

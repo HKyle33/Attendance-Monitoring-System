@@ -1,0 +1,12 @@
+<nav class="navbar navbar-dark bg-primary">
+  <span class="navbar-brand mb-0 h1">Attendance Monitoring System</span>
+    <span class="navbar-text text-white">
+      
+      <% if teacher_signed_in? %>
+        <%= current_teacher.first_name %> <%= current_teacher.last_name %> - <%= link_to "Edit Account", edit_teacher_registration_path %> - <%=link_to "Sign out", destroy_teacher_session_path, :method => 'delete' %>
+      <% elsif student_signed_in? %>
+        <%= current_student.first_name %> <%= current_student.last_name %> - <%= link_to "Edit Account", edit_student_registration_path %> - <%=link_to "Sign out", destroy_student_session_path, :method => 'delete' %>
+      <% end %>
+
+    </span>
+</nav>
