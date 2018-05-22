@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Classes</h1>
+<!-- <h1>Classes</h1>
 
 <table>
   <thead>
@@ -15,6 +15,8 @@
       <th colspan="3"></th>
     </tr>
   </thead>
+
+  
 
   <tbody>
     <% @subjects.each do |subject| %>
@@ -34,6 +36,31 @@
   </tbody>
 </table>
 
-<br>
+-->
 
-<%= link_to 'New Subject', new_subject_path %>
+<div class="card-deck">
+
+<% @subjects.each do |subject| %><br>
+<div class="card bg-light mb-3" style="max-width: 16rem;">
+ <div class="card-header bg-primary text-white h5"><br />
+        <%= subject.subject_code %>
+  </div>
+<div class="card-body">
+<div><%= subject.subject_title %> </div>
+<div>Units: <%= subject.units %></div>
+<div><%= subject.day %> Insert Time Here </div>
+</div>
+<div class="card-footer"><%= link_to 'Show', subject %></div>
+</div>
+<% end %>
+
+<div class ="card bg-primary mb-3 " style="max-width: 16rem">
+ <div class="card-body ">
+
+ </div>
+<div class="card-footer text-white h5"><%= link_to 'Add Class', new_subject_path, style: 'color:#FFFFFF;' %></div>
+</div>
+
+
+
+</div>
