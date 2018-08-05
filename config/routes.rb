@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :subjects
   get 'entry/index'
 
   get 'status/index'
@@ -6,7 +7,6 @@ Rails.application.routes.draw do
   get 'teachers/sign_in'
   get 'students/sign_in'
 
-  resources :subjects
   root 'home#index'
 
   devise_for :students, controllers: {registrations: "student_registrations"}

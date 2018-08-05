@@ -1,5 +1,4 @@
 class SubjectsController < ApplicationController
-  before_action :authenticate_teacher!
   before_action :set_subject, only: [:show, :edit, :update, :destroy]
 
   # GET /subjects
@@ -70,6 +69,6 @@ class SubjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def subject_params
-      params.require(:subject).permit(:subject_title, :subject_code, :units, :day, :time_start, :time_end, :class_key)
+      params.require(:subject).permit(:subject_name, :subject_code, :section, :units, :day, :time_start, :time_end, :class_key)
     end
 end

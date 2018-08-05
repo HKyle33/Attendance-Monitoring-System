@@ -10,9 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180521145027) do
+ActiveRecord::Schema.define(version: 20180805170423) do
 
   create_table "students", force: :cascade do |t|
+    t.string   "name"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -33,18 +34,20 @@ ActiveRecord::Schema.define(version: 20180521145027) do
   end
 
   create_table "subjects", force: :cascade do |t|
-    t.string   "subject_title"
+    t.string   "subject_name"
     t.string   "subject_code"
     t.integer  "units"
     t.string   "day"
     t.time     "time_start"
     t.time     "time_end"
     t.string   "class_key"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "section"
   end
 
   create_table "teachers", force: :cascade do |t|
+    t.string   "name"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
