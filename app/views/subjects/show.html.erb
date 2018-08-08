@@ -1,44 +1,30 @@
 <p id="notice"><%= notice %></p>
 
+<h3><%= @subject.subject_code %>: <%= @subject.subject_name %></h3>
+
 <p>
-  <strong>Subject name:</strong>
-  <%= @subject.subject_name %>
+  Section: <%= @subject.section %> <br />
+  Schedule: <%= @subject.day %>
+</p>
+
+<!--
+<p>
+  Units: <%= @subject.units %>
+</p>
+-->
+
+<!--
+<p>
+  Time start: <%= @subject.time_start %>
 </p>
 
 <p>
-  <strong>Subject code:</strong>
-  <%= @subject.subject_code %>
+  Time end: <%= @subject.time_end %>
 </p>
 
 <p>
-  <strong>Section:</strong>
-  <%= @subject.section %>
+  Class key: <%= @subject.class_key %>
 </p>
-
-<p>
-  <strong>Units:</strong>
-  <%= @subject.units %>
-</p>
-
-<p>
-  <strong>Day:</strong>
-  <%= @subject.day %>
-</p>
-
-<p>
-  <strong>Time start:</strong>
-  <%= @subject.time_start %>
-</p>
-
-<p>
-  <strong>Time end:</strong>
-  <%= @subject.time_end %>
-</p>
-
-<p>
-  <strong>Class key:</strong>
-  <%= @subject.class_key %>
-</p>
-
+-->
 <%= link_to 'Edit', edit_subject_path(@subject) %> |
 <%= link_to 'Back', subjects_path %>
