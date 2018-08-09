@@ -3,8 +3,10 @@ class SubjectsController < ApplicationController
 
   # GET /subjects
   # GET /subjects.json
+  # PROPER DISPLAY OF ITEMS
   def index
-    @subjects = Subject.all
+    # @subjects = Subject.all
+    @subjects = current_teacher.subjects
   end
 
   # GET /subjects/1

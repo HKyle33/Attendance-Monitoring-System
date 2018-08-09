@@ -45,13 +45,13 @@
 <% @subjects.each do |subject| %>
   <div class="card bg-light mb-3 " style="max-width: 30rem; min-width: 20rem">
     <div class="card-header bg-primary text-white h5"><br /><br />
-      <%= subject.section %> - <%= subject.subject_name %>
+      <%= subject.subject_code %>: <%= subject.subject_name %>
     </div>
     <div class="card-body">
-      <div><%= subject.subject_code %></div>
+      <div>Section: <%= subject.section %></div>
       <div>Units: <%= subject.units %></div>
       <div><%= subject.day %> | Insert Time Here </div>
-      <div><%= subject.teacher.first_name %></div>
+      <!-- <div>Teacher: <%= subject.teacher.first_name %> <%= subject.teacher.last_name %></div> -->
       <!-- <div><%= subject.time_start %></div> -->
       <!-- <div><%= subject.time_end %></div>   -->
       <!-- <div>Class Key: <%= subject.class_key %></div> -->
