@@ -110,6 +110,8 @@
     <%= f.text_field :class_key, autofocus: true, class: "form-control" %>
   </div>
 
+  <%= f.hidden_field :teacher_id, :value => current_teacher.id %>
+
   <div class="actions"><br />
     <%= f.submit class: "btn btn-success" %>
   </div>
