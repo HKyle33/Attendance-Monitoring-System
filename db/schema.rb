@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180809192337) do
+ActiveRecord::Schema.define(version: 20180811200214) do
 
   create_table "attendances", force: :cascade do |t|
     t.date     "date_absent"
@@ -40,6 +40,11 @@ ActiveRecord::Schema.define(version: 20180809192337) do
     t.index ["email"], name: "index_students_on_email", unique: true
     t.index ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true
     t.index ["subject_id"], name: "index_students_on_subject_id"
+  end
+
+  create_table "students_subjects", id: false, force: :cascade do |t|
+    t.integer "student_id", null: false
+    t.integer "subject_id", null: false
   end
 
   create_table "subjects", force: :cascade do |t|
