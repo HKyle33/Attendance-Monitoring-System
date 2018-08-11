@@ -3,7 +3,7 @@ class HomeController < ApplicationController
     if teacher_signed_in?
       redirect_to subjects_path
     elsif student_signed_in?
-      redirect_to status_index_path
+      redirect_to subjects_path
     else
       # redirect_to new_teacher_session_path
       redirect_to entry_index_path

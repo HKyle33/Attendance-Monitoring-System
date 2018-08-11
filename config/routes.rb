@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'all_subjects/index'
+
   resources :tests
   resources :subjects
   get 'entry/index'

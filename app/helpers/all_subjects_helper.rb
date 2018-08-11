@@ -1,0 +1,2 @@
+module AllSubjectsHelper
+end

@@ -1,4 +1,4 @@
-class SubjectsController < ApplicationController
+class AllSubjectsController < ApplicationController
   before_action :set_subject, only: [:show, :edit, :update, :destroy]
 
   # GET /subjects
@@ -6,11 +6,7 @@ class SubjectsController < ApplicationController
   # PROPER DISPLAY OF ITEMS
   def index
     # @subjects = Subject.all
-    if teacher_signed_in?
-      @subjects = current_teacher.subjects
-    else
-      @subjects = Subject.all
-    end
+    @subjects = Subject.all
   end
 
   # GET /subjects/1
