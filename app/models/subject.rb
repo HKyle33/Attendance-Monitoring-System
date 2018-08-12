@@ -1,4 +1,5 @@
 class Subject < ApplicationRecord
     belongs_to :teacher
-    has_and_belongs_to_many :students, optional: true
+    has_many :students_subject
+    has_many :students, :through => :students_subject
 end
