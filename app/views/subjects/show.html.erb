@@ -2,7 +2,10 @@
 
 <p>
   Section: <%= @subject.section %> <br />
-  Schedule: <%= @subject.day %>
+  Schedule: <%= @subject.day %> <br />
+  <% if student_signed_in? %>
+    Teacher: <%= @subject.teacher.first_name %> <%= @subject.teacher.last_name %>
+  <% end %>
 </p>
 
 <!--
