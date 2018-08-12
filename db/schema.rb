@@ -10,13 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180811200214) do
+ActiveRecord::Schema.define(version: 20180812175234) do
 
   create_table "attendances", force: :cascade do |t|
     t.date     "date_absent"
     t.date     "date_present"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+  end
+
+  create_table "student_subjects", force: :cascade do |t|
+    t.integer  "student_id"
+    t.integer  "subject_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "students", force: :cascade do |t|
@@ -45,6 +52,8 @@ ActiveRecord::Schema.define(version: 20180811200214) do
   create_table "students_subjects", id: false, force: :cascade do |t|
     t.integer "student_id", null: false
     t.integer "subject_id", null: false
+    t.index ["student_id", "subject_id"], name: "index_students_subjects_on_student_id_and_subject_id"
+    t.index ["subject_id", "student_id"], name: "index_students_subjects_on_subject_id_and_student_id"
   end
 
   create_table "subjects", force: :cascade do |t|
