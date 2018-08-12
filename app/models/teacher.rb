@@ -6,4 +6,11 @@ class Teacher < ApplicationRecord
 
   has_many :subjects
   has_many :students, :through => :subjects
+
+  validates :email, presence: true
+  validates :email, uniqueness: true
+  validates :password, length: { minimum: 6 }, unless: "password.nil?"
+  validates :password, presence: true, if: "id.nil?"
+
+  validates :first_name, :last_name, format: { with: /\A[a-zA-Z]+\z/}
 end
