@@ -12,18 +12,8 @@
   <body>
 
     <%= render partial: 'layouts/navbar' %>
-  
+    
     <div class="container-fluid">
-    <% if flash[:notice] %>
-    <p></p>
-      <div class="alert alert-warning alert-dismissible fade show" role="alert">
-         <div id="notice"><%= notice %></div>
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-          </button>
-      </div>
-    <% end %>
-      <p></p>
       <%= yield %>
     </div>
     

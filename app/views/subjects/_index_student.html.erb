@@ -16,6 +16,7 @@
     </div>
     <div class="card-footer text-right">
       <%= link_to 'Show', subject, class: "btn btn-primary", style: "width: 5rem" %>
+      <%= link_to 'Edit', edit_subject_path(subject), class: "btn btn-secondary", style: "width: 5rem" %>
       <%= link_to 'Remove', subject, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger", style: "width: 5rem"%>
     </div>
   </div>
