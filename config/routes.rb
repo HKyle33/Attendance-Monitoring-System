@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'all_subjects/add'
   get 'all_subjects/index'
 
   resources :tests
