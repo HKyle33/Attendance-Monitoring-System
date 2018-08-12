@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <h3><%= @subject.subject_code %>: <%= @subject.subject_name %></h3>
 
 <p>
@@ -29,5 +27,7 @@
   Class key: <%= @subject.class_key %>
 </p>
 -->
-<%= link_to 'Edit', edit_subject_path(@subject) %> |
+<% if teacher_signed_in? %>
+  <%= link_to 'Edit', edit_subject_path(@subject) %> |
+<% end %>
 <%= link_to 'Back', subjects_path %>
