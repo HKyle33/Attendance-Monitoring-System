@@ -3,6 +3,7 @@
 <p>
   Section: <%= @subject.section %> <br />
   Schedule: <%= @subject.day %> <br />
+  Time: <%= @subject.time_start.strftime("%H:%M:%p") %> - Time end: <%= @subject.time_end.strftime("%H:%M:%p") %>
   <% if student_signed_in? %>
     Teacher: <%= @subject.teacher.first_name %> <%= @subject.teacher.last_name %>
   <% end %>
@@ -14,19 +15,10 @@
 </p>
 -->
 
-<!--
-<p>
-  Time start: <%= @subject.time_start %>
-</p>
-
-<p>
-  Time end: <%= @subject.time_end %>
-</p>
-
 <p>
   Class key: <%= @subject.class_key %>
 </p>
--->
+
 <% if teacher_signed_in? %>
   <%= link_to 'Edit', edit_subject_path(@subject) %> |
 <% end %>
