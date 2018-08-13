@@ -1,6 +1,10 @@
 <br><div class="card bg-light mb-3 mx-auto" style="max-width: 30rem;">
         <div class="card-header bg-success text-white">
+          <% if student_signed_in? %>
+          Add Subject
+          <% else %>
           Editing Subject
+          <% end %>
         </div>
 
         <div class="card-body">
@@ -8,8 +12,12 @@
         </div>
         
         <div class="card-footer">
-           <%= link_to 'Show', @subject %> |
-           <%= link_to 'Back', subjects_path %>
+          <% if student_signed_in? %>
+            <%= link_to 'Back', all_subjects_index_path %>
+          <% else %>
+            <%= link_to 'Show', @subject %> |
+            <%= link_to 'Back', subjects_path %>
+          <% end %>
         </div>
     </div>
 </div>

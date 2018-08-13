@@ -54,7 +54,7 @@
 <% end %>
 
 -->
-
+<% if teacher_signed_in? %>
 <%= form_for(subject) do |f| %>
   <% if subject.errors.any? %>
     <div id="error_explanation">
@@ -110,9 +110,14 @@
     <%= f.text_field :class_key, autofocus: true, class: "form-control" %>
   </div>
 
+
   <%= f.hidden_field :teacher_id, :value => current_teacher.id %>
+ 
 
   <div class="actions"><br />
     <%= f.submit class: "btn btn-success" %>
   </div>
+<% end %>
+<% else %>
+  <%= render 'add_subject', subject: @subject %>
 <% end %>

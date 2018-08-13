@@ -1,0 +1,30 @@
+
+<%= form_for(subject) do |f| %>
+  <% if subject.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(subject.errors.count, "error") %> prohibited this subject from being saved:</h2>
+
+      <ul>
+      <% subject.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <h3><%= @subject.subject_code %>: <%= @subject.subject_name %></h3>
+  Section: <%= @subject.section %> <br />
+  Units: <%= @subject.units %> <br />
+  Schedule: <%= @subject.day %> <br />
+  Time: <%= @subject.time_start.strftime("%I:%M:%p") %> - <%= @subject.time_end.strftime("%I:%M:%p") %> <br />
+  
+  <br />
+
+  <div class="field">
+    <strong><%= f.label :class_key %></strong>
+    <%= f.text_field :class_key, autofocus: true, class: "form-control" %>
+  </div>
+<!-- <%= f.hidden_field :student_ids, :value => current_student.id %> -->
+  <div class="actions"><br />
+    <%= f.submit class: "btn btn-success" %>
+  </div>
+<% end %>

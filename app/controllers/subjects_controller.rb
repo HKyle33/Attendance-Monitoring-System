@@ -48,8 +48,12 @@ class SubjectsController < ApplicationController
   def update
     respond_to do |format|
       if @subject.update(subject_params)
-        format.html { redirect_to @subject, notice: 'Subject was successfully updated.' }
-        format.json { render :show, status: :ok, location: @subject }
+        if student_signed_in?
+          format.html { redirect_to @subject, notice: 'Subject was successfully added.' }
+        else
+          format.html { redirect_to @subject, notice: 'Subject was successfully updated.' }
+        end
+          format.json { render :show, status: :ok, location: @subject }
       else
         format.html { render :edit }
         format.json { render json: @subject.errors, status: :unprocessable_entity }
@@ -75,7 +79,6 @@ class SubjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def subject_params
-      params.require(:subject).permit(:subject_name, :subject_code, :section, :units, :day, :time_start, :time_end, :class_key, :teacher_id)
-    
+      params.require(:subject).permit(:subject_name, :subject_code, :section, :units, :day, :time_start, :time_end, :class_key, :teacher_id, :student_ids)
     end
 end
