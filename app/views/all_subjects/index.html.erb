@@ -1,12 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <div class="card text-center mx-auto bg-dark" style="max-width: 60rem; min-width: 20rem">
-  <div class="card-header text-white h5">
-    All Subjects
+  <div class="card-header text-white h2">
+    <div>
+    <div style="float: left">All Subjects</div>
+    <%= form_tag(all_subjects_index_path, :method => "get", id: "search-form", class: "form-inline my-2 my-lg-0", style: "float: right") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search Subjects", class: "form-control mr-sm-2" %>
+      <%= submit_tag "Search", :subject_name => nil, class: "btn btn-primary my-2 my-sm-0" %>
+    <% end %>
+    </div>
   </div>
 </div>
 
 <br />
+
+<% if @subjects.blank? %>
+<div class="alert alert-info mb-3 mx-auto" role="alert" style="max-width: 60rem; min-width: 20rem">
+  There are no subjects containing the term <%= params[:search] %>.
+</div>
+<% end %>
 
 <% @subjects.each do |subject| %>
   <div class="card bg-light mb-3 mx-auto" style="max-width: 60rem; min-width: 20rem">

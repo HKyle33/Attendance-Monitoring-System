@@ -7,6 +7,11 @@ class AllSubjectsController < ApplicationController
   def index
     # @subjects = Subject.all
     @subjects = Subject.all
+    if params[:search]
+      @subjects = Subject.search(params[:search]).order("created_at DESC")
+    else
+      @subjects = Subject.all.order("created_at DESC")
+    end
   end
 
   # GET /subjects/1
