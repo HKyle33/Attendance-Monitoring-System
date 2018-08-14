@@ -7,7 +7,7 @@ class StudentRegistrationsController < Devise::RegistrationsController
     end
 
     def account_update_params
-            params.require(:student).permit(:first_name, :last_name, :id_number, :email, :password, :password_confirmation, :current_password)
+            params.require(:student).permit(:first_name, :last_name, :id_number, :email, :password, :password_confirmation, :current_password, :subject_ids => [])
     end
 
 end

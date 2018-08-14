@@ -11,5 +11,6 @@ class Teacher < ApplicationRecord
   validates :email, uniqueness: true
   validates :password, length: { minimum: 6 }, unless: "password.nil?"
   validates :password, presence: true, if: "id.nil?"
-  validates :first_name, :last_name, format: { with: /\A[a-zA-Z]+\z/}
+  #validates :first_name, :last_name, format: { with: /\A[a-zA-Z]+\z/}
+  validates :first_name, :last_name, presence: true
 end
