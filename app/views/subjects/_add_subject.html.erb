@@ -23,7 +23,7 @@
     <strong><%= f.label :class_key %></strong>
     <%= f.text_field :class_key, autofocus: true, class: "form-control" %>
   </div>
-    <%= f.hidden_field :student_ids, :value => current_student.id %>
+    <%= f.hidden_field :student_ids[], :value => current_student.id %>
   <div class="actions"><br />
     <%= f.submit class: "btn btn-success" %>
   </div>
