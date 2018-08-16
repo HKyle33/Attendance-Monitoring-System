@@ -1,6 +1,7 @@
 class Subject < ApplicationRecord
     belongs_to :teacher
-    has_and_belongs_to_many :students, optional: true
+    has_many :enrollments
+    has_many :students, through: :enrollments
 
     validates :subject_name, :subject_code, presence: true
 
