@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+  resources :enrollments
   get 'all_subjects/add'
   get 'all_subjects/index'
 
   resources :tests
   resources :subjects
+  get 'subjects/index'
   get 'entry/index'
 
   get 'status/index'

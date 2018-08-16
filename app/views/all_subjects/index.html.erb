@@ -35,7 +35,7 @@
       <!-- <div>Class Key: <%= subject.class_key %></div> -->
     </div>
     <div class="card-footer text-right">
-      <%= link_to 'Add', edit_subject_path(subject), class: "btn btn-primary", style: "width: 5rem" %>
+      <%= link_to 'Add', new_enrollment_path(:id => subject.id, :name => subject.subject_name, :code => subject.subject_code, :section => subject.section, :units => subject.units, :day => subject.day, :key => subject.class_key), class: "btn btn-primary", style: "width: 5rem" %>
     </div>
   </div> 
       <% end %>

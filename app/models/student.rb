@@ -4,6 +4,7 @@ class Student < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  has_many :enrollments
   has_many :subjects, through: :enrollments
   has_many :attendances
   has_one :teacher, :through => :subjects

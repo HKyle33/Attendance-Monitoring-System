@@ -1,0 +1,27 @@
+<%= form_for(enrollment) do |f| %>
+  <% if enrollment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(enrollment.errors.count, "error") %> prohibited this enrollment from being saved:</h2>
+
+      <ul>
+      <% enrollment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <%= f.hidden_field :student_id, :value => current_student.id %>
+  <%= f.hidden_field :subject_id, :value => @subject_id %>
+
+  
+  <h3><%= @subject_code %>: <%= @subject_name %></h3>
+  Section: <%= @subject_section %> <br />
+  Units: <%= @subject_units %> <br />
+  Schedule: <%= @subject_day %> <br /><br />
+
+  <div class="actions">
+    <%= f.submit "Confirm", class: "btn btn-success" %>
+  </div>
+<% end %>

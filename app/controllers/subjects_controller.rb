@@ -9,7 +9,7 @@ class SubjectsController < ApplicationController
     if teacher_signed_in?
       @subjects = current_teacher.subjects
     else
-      @subjects = Subject.all
+      @subjects = current_student.subjects
     end
   end
 
