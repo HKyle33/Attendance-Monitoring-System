@@ -28,7 +28,7 @@
     <div class="card-body">
       <div>Section: <%= subject.section %></div>
       <div>Units: <%= subject.units %></div>
-      <div><%= subject.day %> | Insert Time Here </div>
+      <div><%= subject.day %>: <%= subject.time_start.strftime("%I:%M%p") %> - <%= subject.time_end.strftime("%I:%M%p") %> </div>
       <div>Teacher: <%= subject.teacher.first_name %> <%= subject.teacher.last_name %></div>
       <!-- <div><%= subject.time_start %></div> -->
       <!-- <div><%= subject.time_end %></div>   -->
