@@ -6,7 +6,7 @@
     <div style="float: left">All Subjects</div>
     <%= form_tag(all_subjects_index_path, :method => "get", id: "search-form", class: "form-inline my-2 my-lg-0", style: "float: right") do %>
       <%= text_field_tag :search, params[:search], placeholder: "Search Subjects", class: "form-control mr-sm-2" %>
-      <%= submit_tag "Search", :subject_name => nil, class: "btn btn-primary my-2 my-sm-0" %>
+      <%= submit_tag "Search", :subject_name => nil,  class: "btn btn-primary my-2 my-sm-0" %>
     <% end %>
     </div>
   </div>

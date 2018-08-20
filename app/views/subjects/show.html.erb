@@ -7,11 +7,11 @@
   Time: <%= @subject.time_start.strftime("%I:%M %p") %> - <%= @subject.time_end.strftime("%I:%M %p") %> <br />
   <% if student_signed_in? %>
     Teacher: <%= @subject.teacher.first_name %> <%= @subject.teacher.last_name %> <br />
+  <% else %>
+    Class Key: <%= @subject.class_key %><br />
     *Note: click Create New Attendance if you have not checked the attendance today. <br/>
     <%= link_to 'Check Attendance', classlists_path(@classlist) ,class: "btn btn-primary", style: "width: 15rem" %> OR
     <%= link_to 'Create New Attendance', new_classlist_path(@classlist) ,class: "btn btn-primary", style: "width: 15rem" %>
-  <% else %>
-    Class Key: <%= @subject.class_key %><br />
   <% end %>
   <%= button_to 'Print Summary', class: "btn btn-primary", style: "width: 5rem" %>
 </p>

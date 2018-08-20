@@ -13,6 +13,10 @@ class ClasslistsController < ApplicationController
   def show
   end
 
+  def save
+
+  end
+
   # GET /classlists/new
   def new
     @classlists = Classlist.all

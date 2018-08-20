@@ -16,24 +16,24 @@ Today is <%= Time.current.strftime("%B %d, %Y") %>
 
   <tbody>
     <% @classlists.each do |classlist| %>
-    
-        <tr>
-        <td>Created: <%= time_ago_in_words(classlist.created_at) %></td>
-      </tr>
+
     <% Student.all.each do |student| %>
       <tr>
         <td><%= student.first_name %></td>
         <td><%= student.last_name %></td>
         <td><%= student.id_number %></td>
         <td><%= classlist.student %></td>
-
         <!-- <td><%= classlist.present %></td> -->
         <td><%= classlist.late %></td>
         <td><%= classlist.absent %></td>
         <td><%= classlist.total %></td>
-        <td><%= link_to 'Edit', edit_classlist_path(classlist) %></td>
+        
       </tr>
       <% end %>
+      <tr>
+        <td>Created: <%= time_ago_in_words(classlist.created_at) %></td> <br />
+        <td><%= link_to 'Edit', edit_classlist_path(classlist) %></td>
+      </tr>
     <% end %>
   </tbody>
 </table>
