@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Classlists</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Student</th>
+      <th>Present</th>
+      <th>Late</th>
+      <th>Absent</th>
+      <th>Total</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @classlists.each do |classlist| %>
+    <% Student.all.each do |student| %>
+      <tr>
+        <td><%= student.first_name %></td>
+        <td><%= student.last_name %></td>
+        <td><%= student.id_number %></td>
+        <td><%= classlist.student %></td>
+        <td><%= classlist.present %></td>
+        <td><%= classlist.late %></td>
+        <td><%= classlist.absent %></td>
+        <td><%= classlist.total %></td>
+        <td><%= link_to 'Edit', edit_classlist_path(classlist) %></td>
+      </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Back', subjects_path %>

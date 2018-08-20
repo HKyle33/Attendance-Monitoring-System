@@ -1,0 +1,42 @@
+<%= form_for(classlist) do |f| %>
+  <% if classlist.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(classlist.errors.count, "error") %> prohibited this classlist from being saved:</h2>
+
+      <ul>
+      <% classlist.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<!-- 
+  <div class="field">
+    <%= f.label :student %>
+    <%= f.text_field :student %>
+  </div>
+ -->
+  <div class="field">
+    <%= f.label :present %>
+    <%= f.date_select :present %>
+  </div>
+
+  <div class="field">
+    <%= f.label :late %>
+    <%= f.date_select :late %>
+  </div>
+
+  <div class="field">
+    <%= f.label :absent %>
+    <%= f.date_select :absent %>
+  </div>
+<!-- 
+  <div class="field">
+    <%= f.label :total %>
+    <%= f.number_field :total %>
+  </div> -->
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

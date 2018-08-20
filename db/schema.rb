@@ -10,13 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180816173722) do
+ActiveRecord::Schema.define(version: 20180820020749) do
 
   create_table "attendances", force: :cascade do |t|
     t.date     "date_absent"
     t.date     "date_present"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+  end
+
+  create_table "classlists", force: :cascade do |t|
+    t.string   "student"
+    t.date     "present"
+    t.date     "late"
+    t.date     "absent"
+    t.integer  "total"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "enrollments_id"
+    t.integer  "subjects_id"
+    t.integer  "teachers_id"
+    t.integer  "students_id"
+    t.index ["enrollments_id"], name: "index_classlists_on_enrollments_id"
+    t.index ["students_id"], name: "index_classlists_on_students_id"
+    t.index ["subjects_id"], name: "index_classlists_on_subjects_id"
+    t.index ["teachers_id"], name: "index_classlists_on_teachers_id"
   end
 
   create_table "enrollments", force: :cascade do |t|
@@ -49,13 +67,6 @@ ActiveRecord::Schema.define(version: 20180816173722) do
     t.index ["email"], name: "index_students_on_email", unique: true
     t.index ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true
     t.index ["subject_id"], name: "index_students_on_subject_id"
-  end
-
-  create_table "students_subjects", id: false, force: :cascade do |t|
-    t.integer "student_id", null: false
-    t.integer "subject_id", null: false
-    t.index ["student_id", "subject_id"], name: "index_students_subjects_on_student_id_and_subject_id"
-    t.index ["subject_id", "student_id"], name: "index_students_subjects_on_subject_id_and_student_id"
   end
 
   create_table "subjects", force: :cascade do |t|

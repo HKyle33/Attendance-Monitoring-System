@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :classlists
   resources :enrollments
   get 'all_subjects/add'
   get 'all_subjects/index'

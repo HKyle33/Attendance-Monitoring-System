@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Student:</strong>
+  <%= @classlist.student %>
+</p>
+
+<p>
+  <strong>Present:</strong>
+  <%= @classlist.present %>
+</p>
+
+<p>
+  <strong>Late:</strong>
+  <%= @classlist.late %>
+</p>
+
+<p>
+  <strong>Absent:</strong>
+  <%= @classlist.absent %>
+</p>
+
+<p>
+  <strong>Total:</strong>
+  <%= @classlist.total %>
+</p>
+
+<%= link_to 'Edit', edit_classlist_path(@classlist) %> |
+<%= link_to 'Back', classlists_path %>

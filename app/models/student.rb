@@ -8,6 +8,8 @@ class Student < ApplicationRecord
   has_many :subjects, through: :enrollments
   has_many :attendances
   has_one :teacher, :through => :subjects
+  belongs_to :classlist
+
 
   validates :email, presence: true
   validates :email, uniqueness: true
