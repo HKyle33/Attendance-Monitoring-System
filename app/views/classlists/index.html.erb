@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Classlists</h1>
-
+Today is <%= Time.current.strftime("%B %d, %Y") %>
 <table>
   <thead>
     <tr>
       <th>Student</th>
-      <th>Present</th>
+      <!-- <th>Present</th> -->
       <th>Late</th>
       <th>Absent</th>
       <th>Total</th>
@@ -16,13 +16,18 @@
 
   <tbody>
     <% @classlists.each do |classlist| %>
+    
+        <tr>
+        <td>Created: <%= time_ago_in_words(classlist.created_at) %></td>
+      </tr>
     <% Student.all.each do |student| %>
       <tr>
         <td><%= student.first_name %></td>
         <td><%= student.last_name %></td>
         <td><%= student.id_number %></td>
         <td><%= classlist.student %></td>
-        <td><%= classlist.present %></td>
+
+        <!-- <td><%= classlist.present %></td> -->
         <td><%= classlist.late %></td>
         <td><%= classlist.absent %></td>
         <td><%= classlist.total %></td>

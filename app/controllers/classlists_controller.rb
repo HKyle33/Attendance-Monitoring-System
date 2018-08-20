@@ -15,6 +15,8 @@ class ClasslistsController < ApplicationController
 
   # GET /classlists/new
   def new
+    @classlists = Classlist.all
+    @subjects = Subject.all 
     @classlist = Classlist.new
   end
 
