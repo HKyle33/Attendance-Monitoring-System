@@ -1,6 +1,5 @@
 class Subject < ApplicationRecord
     belongs_to :teacher
-    belongs_to :classlist
     has_many :enrollments
     has_many :students, through: :enrollments
 

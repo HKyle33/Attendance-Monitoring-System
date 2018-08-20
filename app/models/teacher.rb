@@ -6,7 +6,6 @@ class Teacher < ApplicationRecord
 
   has_many :subjects
   has_many :students, :through => :subjects
-  belongs_to :classlist
 
 
   validates :email, presence: true

@@ -34,18 +34,30 @@ Today is <%= Time.current.strftime("%B %d, %Y") %>
         <td><%= student.id_number %></td>
 
 
-<!-- <td>
+<td>
    <div class="field">
     <%= f.label :present %>
     <%= f.label :present, "Yes", :value => "true"  %>
     <%= f.radio_button :present, true %>
+    <%= f.label :present %>
+    <%= f.label :present, "No", :value => "false" %>
+    <%= f.radio_button :present, false, :checked => true %>
+  </div>
+</td>
+
+
+<td>
+   <div class="field">
+    <%= f.label :absent %>
+    <%= f.label :absent, "Yes", :value => "true"  %>
+    <%= f.radio_button :absent, true %>
     <%= f.label :absent %>
     <%= f.label :absent, "No", :value => "false" %>
     <%= f.radio_button :absent, false, :checked => true %>
   </div>
-</td> -->
+</td>
 
-<td>
+<!-- <td>
 <div>
   <%= f.label :present, value: false %>
   <%= f.radio_button :present, true, :checked => true, :value => false %>
@@ -57,15 +69,23 @@ Today is <%= Time.current.strftime("%B %d, %Y") %>
   <%= f.label :absent, value: false %>
   <%= f.radio_button :absent, true, :value => true%>
 </div>
+</td> -->
+<!-- <tr>
+<td><%= f.radio_button :present, 'Present', :checked => true %> 
+  <%= label :present, 'Present' %>
 </td>
-
-<!-- <td>
+<td>  <%= f.radio_button :absent, 'Absent' %>
+  <%= label :absent, 'Absent' %>
+</td>
+</tr>
+ -->
+<!-- 
+<td>
    <div class="field">
-    <%= f.label :absent %><br />
-    <%= f.label :absent, "Yes", :value => "true"  %>
-    <%= f.radio_button :absent, true %>
-    <%= f.label :absent, "No", :value => "false" %>
-    <%= f.radio_button :absent, false, :checked => true %>
+    <%= f.radio_button(:present, "present") %>
+    <%= f.label(:present, "PRESENT") %>
+    <%= f.radio_button(:absent, "absent") %>
+    <%= f.label(:absent, "ABSENT") %>
   </div>
 </td> -->
 
