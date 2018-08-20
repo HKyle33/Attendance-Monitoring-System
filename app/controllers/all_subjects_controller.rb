@@ -14,6 +14,12 @@ class AllSubjectsController < ApplicationController
     end
   end
 
+
+  def search
+    @subjects = Subject.where(title: params[:search_string])
+    render :index
+  end
+
   # GET /subjects/1
   # GET /subjects/1.json
   def show
